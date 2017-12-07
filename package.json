@@ -1,0 +1,26 @@
+{
+  "name": "graphql-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liuwill/graphql-server.git"
+  },
+  "keywords": [
+    "graphql"
+  ],
+  "author": "liuwill",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/liuwill/graphql-server/issues"
+  },
+  "homepage": "https://github.com/liuwill/graphql-server#readme",
+  "devDependencies": {
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1"
+  }
+}
