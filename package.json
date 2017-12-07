@@ -4,7 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon ./index.js",
+    "coverage": "istanbul cover node_modules/mocha/bin/_mocha -- -R spec --timeout 5000 --recursive",
+    "coverage:check": "istanbul check-coverage",
+    "lint": "eslint -c .eslintrc.yml .",
+    "mocha": "mocha -R spec --recursive --bail",
+    "test": "npm run lint && npm run coverage && npm run coverage:check"
   },
   "repository": {
     "type": "git",
@@ -21,6 +26,18 @@
   "homepage": "https://github.com/liuwill/graphql-server#readme",
   "devDependencies": {
     "babel-polyfill": "^6.26.0",
-    "babel-preset-env": "^1.6.1"
+    "babel-preset-env": "^1.6.1",
+    "babel-register": "^6.26.0",
+    "chai": "^4.1.2",
+    "eslint": "^4.12.1",
+    "istanbul": "^1.1.0-alpha.1",
+    "mocha": "^4.0.1",
+    "nodemon": "^1.12.5",
+    "sinon": "^4.1.2"
+  },
+  "dependencies": {
+    "graphql": "^0.11.7",
+    "koa": "^2.4.1",
+    "log4js": "^2.3.12"
   }
 }

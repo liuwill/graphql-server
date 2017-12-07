@@ -1,0 +1,9 @@
+{
+  "verbose": true,
+  "watch": ["server", "index.js"],
+  "ignore": ["test/**", "fixtures/*"],
+  "execMap": {
+    "rb": "ruby",
+    "pde": "processing --sketch={{pwd}} --run"
+  }
+}
