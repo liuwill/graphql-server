@@ -4,21 +4,21 @@ const packageConfig = require('../../package.json')
 log4js.configure({
   appenders: {
     'file': { type: 'file', filename: `log/${packageConfig.name}.log` },
-    'console': { type: 'stdout' }
+    'console': { type: 'stdout' },
   },
   categories: {
     default: { appenders: ['file'], level: 'error' },
-    console: { appenders: ['console'], level: 'info' }
-  }
-});
+    console: { appenders: ['console'], level: 'info' },
+  },
+})
 
 const innerLoggers = {
   'file': log4js.getLogger('file'),
-  'console': log4js.getLogger('console')
+  'console': log4js.getLogger('console'),
 }
 const createLogger = (type) => {
   type = type || 'console'
-  return  innerLoggers[type]
+  return innerLoggers[type]
 }
 
 export { createLogger }

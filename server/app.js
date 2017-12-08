@@ -1,12 +1,23 @@
-const { createLogger } = require('./plugins/logger');
-const Koa = require('koa');
-const app = new Koa();
+const { createLogger } = require('./plugins/logger')
+const Koa = require('koa')
+const bodyParser = require('koa-bodyparser')
+const app = new Koa()
+
+const graphqlRouter = require('./router')
 
 const logger = createLogger()
+
+app.use(bodyParser())
+
+app
+  .use(graphqlRouter.default.routes())
+  .use(graphqlRouter.default.allowedMethods())
+
 // response
 app.use(ctx => {
-  ctx.body = 'Hello Koa';
-});
+  ctx.body = 'Hello Koa'
+})
+
 
 const createServer = () => {
   return app
